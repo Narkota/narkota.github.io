@@ -1,45 +1,157 @@
-/* Сброс отступов и границ */
-* {
+/* ================================
+   Основная тема и CSS-переменные
+================================ */
+:root {
+    --clr-primary: #4a90e2;
+    --clr-secondary: #fff;
+    --clr-bg-overlay: rgba(0, 0, 0, 0.7);
+    --clr-text: #ddd;
+    --clr-white: #fff;
+    --radius: 8px;
+    --transition: 0.3s ease-in-out;
+  }
+  
+  /* Плавный скролл */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* =======================================
+     Базовые сбросы и утилиты
+  ======================================= */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+  .text-center { text-align: center; }
+  .btn {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    border-radius: var(--radius);
+    transition: background var(--transition);
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: var(--clr-primary);
+    color: var(--clr-secondary);
+  }
+  .btn-primary:hover {
+    background: #357ABD;
+  }
   
+  /* =======================================
+     Основные стили
+  ======================================= */
   body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    padding: 20px;
-    background: #fafafa;
+    font-family: 'Roboto', sans-serif;
+    color: var(--clr-white);
+    background-image: url('https://source.unsplash.com/1920x1080/?crypto,blockchain');
+    background-size: cover;
+    background-position: center;
+  }
+  .overlay {
+    background: var(--clr-bg-overlay);
+    min-height: 100vh;
+    padding-top: 60px;
   }
   
-  header, footer {
-    background: #f4f4f4;
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 20px;
+  /* Навигация */
+  .header-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: background var(--transition);
   }
-  
-  nav ul {
+  .header-nav.scrolled {
+    background: var(--clr-primary);
+  }
+  .header-nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    gap: 30px;
+    padding: 15px 0;
   }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
+  .header-nav a {
     color: #333;
-    font-weight: bold;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+  }
+  .header-nav a:hover,
+  .header-nav a:focus {
+    color: var(--clr-primary);
+    outline: none;
   }
   
-  main section {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 100px 20px;
+    opacity: 0;
+    animation: fadeInUp 0.6s var(--transition) forwards;
+    animation-delay: 0.2s;
   }
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  }
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: var(--clr-text);
+  }
+  
+  /* Общие секции */
+  main {
+    padding: 0 20px;
+  }
+  section {
+    padding: 60px 0;
+    opacity: 0;
+    animation: fadeInUp 0.6s var(--transition) forwards;
+  }
+  section:nth-of-type(2) { animation-delay: 0.4s; }
+  section:nth-of-type(3) { animation-delay: 0.6s; }
+  section:nth-of-type(4) { animation-delay: 0.8s; }
+  section:nth-of-type(5) { animation-delay: 1.0s; }
+  section:nth-of-type(6) { animation-delay: 1.2s; }
+  section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--clr-primary);
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .header-nav ul { flex-direction: column; gap: 10px; }
+    .features-grid, #popular .coins { grid-template-columns: 1fr; }
+    .detail-item { flex-direction: column; text-align: center; }
+    .detail-chart { width: 100%; }
+  }
+  
+  /* =======================================
+     Анимации
+  ======================================= */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Фокус-стили для доступности */
+  a:focus, button:focus {
+    outline: 2px dashed var(--clr-primary);
+    outline-offset: 4px;
+  }
+  
+  /* Скролл-эффект для меню */
+  /* Добавьте JS, который при скролле добавляет класс 'scrolled' */
   
