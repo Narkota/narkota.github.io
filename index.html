@@ -123,7 +123,17 @@
       height: 60px;
       margin-bottom: 10px;
     }
-    /* Детали с компактным графиком */
+    /* Детали c компактным графиком и переключателем валют */
+    .currency-switch {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .currency-switch select {
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
     #details {
       max-width: 1000px;
       margin: 0 auto 40px;
@@ -227,6 +237,13 @@
       </section>
       <section id="details">
         <h2>Детали и анализ рынка</h2>
+        <div class="currency-switch">
+          <label for="currencyToggle">Показать графики в: </label>
+          <select id="currencyToggle">
+            <option value="USD">USD</option>
+            <option value="RUB">RUB</option>
+          </select>
+        </div>
         <div class="detail-item">
           <div class="detail-info">
             <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="BTC">
@@ -240,65 +257,6 @@
           <div class="detail-info">
             <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" alt="ETH">
             <h3>Ethereum (ETH)</h3>
-            <p>Рыночная капитализация: ~$400 млрд. Лидер смарт-контрактов, активная экосистема.</p>
-            <p>Анализ: Переход на PoS снизил инфляцию, ожидается дальнейший рост децентрализованных приложений.</p>
-          </div>
-          <div class="detail-chart"><canvas id="ethChart" width="300" height="180"></canvas></div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-info">
-            <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/825.png" alt="USDT">
-            <h3>Tether (USDT)</h3>
-            <p>Рыночная капитализация: ~$83 млрд. Стейблкоин с привязкой к USD.</p>
-            <p>Анализ: Полная поддержка резервами, низкая волатильность, используется для хеджирования рисков.</p>
-          </div>
-          <div class="detail-chart"><canvas id="usdtChart" width="300" height="180"></canvas></div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-info">
-            <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/52.png" alt="XRP">
-            <h3>XRP (Ripple)</h3>
-            <p>Рыночная капитализация: ~$25 млрд. Фокус на быстрых и дешевых трансграничных платежах.</p>
-            <p>Анализ: Широкое принятие банками, но регуляторные риски сохраняются.</p>
-          </div>
-          <div class="detail-chart"><canvas id="xrpChart" width="300" height="180"></canvas></div>
-        </div>
-      </section>
-      <section id="contact">
-        <h2>Контакты</h2>
-        <p>Свяжитесь с нами: <a href="mailto:info@example.com">info@example.com</a></p>
-      </section>
-      <footer><p>&copy; 2025 Крипто-Лендинг. Все права защищены.</p></footer>
-    </main>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-  <script>
-    // Статические данные за апрель 2025
-    const staticData = {
-      BTC: { labels: ['01 Apr','05 Apr','10 Apr','15 Apr','20 Apr','25 Apr','30 Apr'], prices: [58000,60000,59000,62000,61000,63000,64000] },
-      ETH: { labels: ['01 Apr','05 Apr','10 Apr','15 Apr','20 Apr','25 Apr','30 Apr'], prices: [3200,3400,3300,3500,3450,3600,3700] },
-      USDT:{ labels:['01 Apr','10 Apr','20 Apr','30 Apr'], prices:[1,1,1,1] },
-      XRP:{ labels:['01 Apr','10 Apr','20 Apr','30 Apr'], prices:[0.5,0.55,0.52,0.58] }
-    };
-    window.onload = function() {
-      const coins = [
-        { key: 'BTC', canvasId: 'btcChart', color: '#f39c12' },
-        { key: 'ETH', canvasId: 'ethChart', color: '#3498db' },
-        { key: 'USDT', canvasId: 'usdtChart', color: '#2ecc71' },
-        { key: 'XRP', canvasId: 'xrpChart', color: '#9b59b6' }
-      ];
-      coins.forEach(coin => {
-        const ctx = document.getElementById(coin.canvasId).getContext('2d');
-        const gradient = ctx.createLinearGradient(0,0,0,180);
-        gradient.addColorStop(0, coin.color + '80');
-        gradient.addColorStop(1, coin.color + '00');
-        new Chart(ctx, {
-          type: 'line',
-          data: { labels: staticData[coin.key].labels, datasets: [{ label: coin.key, data: staticData[coin.key].prices, fill: 'start', backgroundColor: gradient, borderColor: coin.color, pointBackgroundColor: coin.color, pointRadius: 5, tension: 0.4 }] },
-          options: { responsive: true, plugins: { legend: { labels: { color: '#fff', font: { size: 12 } } } }, scales: { x: { ticks: { color: '#fff', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.2)' } }, y: { ticks: { color: '#fff', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.2)' } } } }
-        });
-      });
-    };
-  </script>
+            <p>Ры.unsplash.com/1920x1080/?crypto,blockchain')
 </body>
 </html>
