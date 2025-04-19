@@ -42,14 +42,10 @@
       font-weight: 500;
       transition: color 0.3s;
     }
-    .header-nav a:hover {
-      color: #4a90e2;
-    }
+    .header-nav a:hover { color: #4a90e2; }
+
     /* Hero */
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-    }
+    .hero { text-align: center; padding: 100px 20px; }
     .hero h1 {
       font-size: 3.5rem;
       margin-bottom: 20px;
@@ -71,32 +67,25 @@
       text-decoration: none;
       transition: background 0.3s;
     }
-    .cta-button:hover {
-      background: #357ABD;
-    }
-    main {
-      padding: 0 20px;
-    }
-    section {
-      padding: 60px 0;
-    }
+    .cta-button:hover { background: #357ABD; }
+
+    main { padding: 0 20px; }
+    section { padding: 60px 0; }
     section h2 {
       text-align: center;
       font-size: 2rem;
       margin-bottom: 30px;
       color: #4a90e2;
     }
+
     /* О криптовалюте */
     #crypto .content {
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
     }
-    #crypto ul {
-      list-style: disc inside;
-      margin-top: 20px;
-      color: #ddd;
-    }
+    #crypto ul { list-style: disc inside; margin-top: 20px; color: #ddd; }
+
     /* Возможности */
     .features-grid {
       display: grid;
@@ -114,12 +103,9 @@
       text-align: center;
       transition: transform 0.3s;
     }
-    .feature-card:hover {
-      transform: translateY(-5px);
-    }
-    .feature-card h3 {
-      margin-bottom: 10px;
-    }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-card h3 { margin-bottom: 10px; }
+
     /* Популярные монеты */
     #popular .coins {
       display: grid;
@@ -137,17 +123,14 @@
       text-align: center;
       transition: transform 0.3s;
     }
-    .coin-card:hover {
-      transform: translateY(-5px);
-    }
-    .coin-card img {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 10px;
-    }
-    /* Графики */
+    .coin-card:hover { transform: translateY(-5px); }
+    .coin-card img { width: 60px; height: 60px; margin-bottom: 10px; }
+
+    /* Графики — увеличенный */
     #charts canvas {
-      max-width: 800px;
+      width: 90%;
+      max-width: 1200px;
+      height: 600px;
       display: block;
       margin: 0 auto;
       background: rgba(255,255,255,0.1);
@@ -155,22 +138,12 @@
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
     /* Контакты */
-    #contact p {
-      text-align: center;
-      color: #ddd;
-    }
-    a {
-      color: #4a90e2;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #ddd;
-    }
+    #contact p { text-align: center; color: #ddd; }
+    a { color: #4a90e2; }
+    a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 20px; color: #ddd; }
   </style>
 </head>
 <body>
@@ -256,7 +229,7 @@
 
     <section id="charts">
       <h2>Динамика цен</h2>
-      <canvas id="priceChart"></canvas>
+      <canvas id="priceChart" width="1200" height="600"></canvas>
     </section>
 
     <section id="contact">
@@ -272,10 +245,10 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     const ctx = document.getElementById('priceChart').getContext('2d');
-    const gradientBTC = ctx.createLinearGradient(0, 0, 0, 400);
+    const gradientBTC = ctx.createLinearGradient(0, 0, 0, 600);
     gradientBTC.addColorStop(0, 'rgba(243,156,18,0.5)');
     gradientBTC.addColorStop(1, 'rgba(243,156,18,0)');
-    const gradientETH = ctx.createLinearGradient(0, 0, 0, 400);
+    const gradientETH = ctx.createLinearGradient(0, 0, 0, 600);
     gradientETH.addColorStop(0, 'rgba(52,152,219,0.5)');
     gradientETH.addColorStop(1, 'rgba(52,152,219,0)');
     new Chart(ctx, {
@@ -290,8 +263,8 @@
             backgroundColor: gradientBTC,
             borderColor: '#f39c12',
             pointBackgroundColor: '#f39c12',
-            pointRadius: 5,
-            pointHoverRadius: 7,
+            pointRadius: 6,
+            pointHoverRadius: 8,
             tension: 0.4
           },
           {
@@ -301,8 +274,8 @@
             backgroundColor: gradientETH,
             borderColor: '#3498db',
             pointBackgroundColor: '#3498db',
-            pointRadius: 5,
-            pointHoverRadius: 7,
+            pointRadius: 6,
+            pointHoverRadius: 8,
             tension: 0.4
           }
         ]
@@ -310,11 +283,11 @@
       options: {
         responsive: true,
         plugins: {
-          legend: { labels: { color: '#fff', font: { size: 14 } } }
+          legend: { labels: { color: '#fff', font: { size: 16 } } }
         },
         scales: {
-          x: { grid: { color: 'rgba(255,255,255,0.2)' }, ticks: { color: '#fff' } },
-          y: { grid: { color: 'rgba(255,255,255,0.2)' }, ticks: { color: '#fff' } }
+          x: { grid: { color: 'rgba(255,255,255,0.2)' }, ticks: { color: '#fff', font: { size: 14 } } },
+          y: { grid: { color: 'rgba(255,255,255,0.2)' }, ticks: { color: '#fff', font: { size: 14 } } }
         }
       }
     });
