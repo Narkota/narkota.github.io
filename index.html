@@ -21,129 +21,44 @@
     }
     /* Навигация */
     .header-nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(10px);
+      position: fixed; top: 0; width: 100%;
+      background: rgba(255,255,255,0.8); backdrop-filter: blur(10px);
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       z-index: 1000;
     }
-    .header-nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px 0;
-    }
-    .header-nav a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    .header-nav a:hover { color: #4a90e2; }
-
+    .header-nav ul { list-style: none; display:flex; justify-content:center; gap:30px; padding:15px 0; }
+    .header-nav a { color:#333; text-decoration:none; font-weight:500; transition:color .3s; }
+    .header-nav a:hover { color:#4a90e2; }
     /* Hero */
-    .hero { text-align: center; padding: 100px 20px; }
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.7);
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: #ddd;
-    }
-    .cta-button {
-      background: #4a90e2;
-      color: #fff;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .cta-button:hover { background: #357ABD; }
-
-    main { padding: 0 20px; }
-    section { padding: 60px 0; }
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: #4a90e2;
-    }
-
+    .hero { text-align:center; padding:100px 20px; }
+    .hero h1 { font-size:3.5rem; margin-bottom:20px; text-shadow:0 2px 5px rgba(0,0,0,0.7); }
+    .hero p { font-size:1.2rem; max-width:600px; margin:0 auto 30px; color:#ddd; }
+    .cta-button { background:#4a90e2; color:#fff; padding:15px 30px; border:none; border-radius:5px; font-size:1rem; text-decoration:none; transition:background .3s; }
+    .cta-button:hover { background:#357ABD; }
+    main { padding:0 20px; }
+    section { padding:60px 0; }
+    section h2 { text-align:center; font-size:2rem; margin-bottom:30px; color:#4a90e2; }
     /* О криптовалюте */
-    #crypto .content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    #crypto ul { list-style: disc inside; margin-top: 20px; color: #ddd; }
-
+    #crypto .content { max-width:800px; margin:0 auto; text-align:center; }
+    #crypto ul { list-style:disc inside; margin-top:20px; color:#ddd; }
     /* Возможности */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .feature-card {
-      background: #fff;
-      color: #333;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .feature-card:hover { transform: translateY(-5px); }
-    .feature-card h3 { margin-bottom: 10px; }
-
+    .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; max-width:1000px; margin:0 auto; }
+    .feature-card { background:#fff; color:#333; padding:20px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); text-align:center; transition:transform .3s; }
+    .feature-card:hover { transform:translateY(-5px); }
+    .feature-card h3 { margin-bottom:10px; }
     /* Популярные монеты */
-    #popular .coins {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .coin-card {
-      background: #fff;
-      color: #333;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .coin-card:hover { transform: translateY(-5px); }
-    .coin-card img { width: 60px; height: 60px; margin-bottom: 10px; }
-
-    /* Графики — увеличенный */
-    #charts canvas {
-      width: 90%;
-      max-width: 1200px;
-      height: 600px;
-      display: block;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
+    #popular .coins { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:20px; max-width:1000px; margin:0 auto; }
+    .coin-card { background:#fff; color:#333; padding:20px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); text-align:center; transition:transform .3s; }
+    .coin-card:hover { transform:translateY(-5px); }
+    .coin-card img { width:60px; height:60px; margin-bottom:10px; }
+    /* Графики */
+    .chart-container { width:90%; max-width:1200px; margin:20px auto; background:rgba(255,255,255,0.1); padding:20px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+    .chart-container canvas { width:100% !important; height:400px !important; }
     /* Контакты */
-    #contact p { text-align: center; color: #ddd; }
-    a { color: #4a90e2; }
-    a:hover { text-decoration: underline; }
-    footer { text-align: center; padding: 20px; color: #ddd; }
+    #contact p { text-align:center; color:#ddd; }
+    a { color:#4a90e2; }
+    a:hover { text-decoration:underline; }
+    footer { text-align:center; padding:20px; color:#ddd; }
   </style>
 </head>
 <body>
@@ -155,141 +70,112 @@
           <li><a href="#crypto">Что такое</a></li>
           <li><a href="#features">Возможности</a></li>
           <li><a href="#popular">Монеты</a></li>
-          <li><a href="#charts">Графики</a></li>
+          <li><a href="#details">Детали</a></li>
           <li><a href="#contact">Контакты</a></li>
         </ul>
       </nav>
     </header>
+    <main>
+      <section id="hero" class="hero">
+        <h1>Добро пожаловать в мир криптовалют</h1>
+        <p>Узнайте основы, популярные монеты и следите за динамикой цен в реальном времени.</p>
+        <a href="#crypto" class="cta-button">Начать</a>
+      </section>
 
-    <section id="hero" class="hero">
-      <h1>Добро пожаловать в мир криптовалют</h1>
-      <p>Узнайте основы, популярные монеты и следите за динамикой цен в реальном времени.</p>
-      <a href="#crypto" class="cta-button">Начать</a>
-    </section>
+      <section id="crypto">
+        <h2>Что такое криптовалюта?</h2>
+        <div class="content">
+          <p>Криптовалюта — это цифровая валюта на основе блокчейна, обеспечивающая безопасность, прозрачность и децентрализацию транзакций.</p>
+          <ul>
+            <li>Децентрализованное управление</li>
+            <li>Прозрачность и защита от подделок</li>
+            <li>Низкие комиссии и быстрые переводы</li>
+          </ul>
+        </div>
+      </section>
 
-    <section id="crypto">
-      <h2>Что такое криптовалюта?</h2>
-      <div class="content">
-        <p>Криптовалюта — цифровая валюта на основе блокчейна, обеспечивающая безопасность, прозрачность и децентрализацию транзакций.</p>
-        <ul>
-          <li>Децентрализованное управление.</li>
-          <li>Защищённые и прозрачные записи.</li>
-          <li>Низкие комиссии и быстрые переводы.</li>
-        </ul>
-      </div>
-    </section>
+      <section id="features">
+        <h2>Возможности</h2>
+        <div class="features-grid">
+          <div class="feature-card"><h3>DeFi</h3><p>Децентрализованные финансы без посредников.</p></div>
+          <div class="feature-card"><h3>NFT</h3><p>Уникальные токены для искусства и коллекций.</p></div>
+          <div class="feature-card"><h3>Стейкинг</h3><p>Получайте вознаграждения за участие в сети.</p></div>
+          <div class="feature-card"><h3>DAO</h3><p>Управление проектами через децентрализованные организации.</p></div>
+        </div>
+      </section>
 
-    <section id="features">
-      <h2>Возможности</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <h3>DeFi</h3>
-          <p>Децентрализованные финансы без посредников.</p>
+      <section id="popular">
+        <h2>Популярные монеты</h2>
+        <div class="coins">
+          <div class="coin-card"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="Bitcoin"><h3>Bitcoin (BTC)</h3><p>Первая криптовалюта.</p></div>
+          <div class="coin-card"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" alt="Ethereum"><h3>Ethereum (ETH)</h3><p>Платформа для смарт-контрактов.</p></div>
+          <div class="coin-card"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/825.png" alt="Tether"><h3>Tether (USDT)</h3><p>Стейблкоин, привязанный к доллару.</p></div>
+          <div class="coin-card"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/52.png" alt="XRP"><h3>XRP</h3><p>Мгновенные международные переводы.</p></div>
         </div>
-        <div class="feature-card">
-          <h3>NFT</h3>
-          <p>Уникальные токены для искусства и коллекций.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Стейкинг</h3>
-          <p>Получайте вознаграждения за участие в сети.</p>
-        </div>
-        <div class="feature-card">
-          <h3>DAO</h3>
-          <p>Управление проектами через децентрализованные организации.</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="popular">
-      <h2>Популярные монеты</h2>
-      <div class="coins">
-        <div class="coin-card">
-          <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="Bitcoin">
-          <h3>Bitcoin (BTC)</h3>
-          <p>Первая и самая известная криптовалюта.</p>
-        </div>
-        <div class="coin-card">
-          <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" alt="Ethereum">
-          <h3>Ethereum (ETH)</h3>
-          <p>Платформа для смарт-контрактов.</p>
-        </div>
-        <div class="coin-card">
-          <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/825.png" alt="Tether">
-          <h3>Tether (USDT)</h3>
-          <p>Стейблкоин, привязанный к доллару.</p>
-        </div>
-        <div class="coin-card">
-          <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/52.png" alt="XRP">
-          <h3>XRP</h3>
-          <p>Мгновенные международные переводы.</p>
-        </div>
-      </div>
-    </section>
+      <section id="details">
+        <h2>Детали и графики</h2>
+        <div class="chart-container"><h3>Bitcoin (BTC) в USD</h3><canvas id="btcChart"></canvas></div>
+        <div class="chart-container"><h3>Ethereum (ETH) в USD</h3><canvas id="ethChart"></canvas></div>
+      </section>
 
-    <section id="charts">
-      <h2>Динамика цен</h2>
-      <canvas id="priceChart" width="1200" height="600"></canvas>
-    </section>
+      <section id="contact">
+        <h2>Контакты</h2>
+        <p>Свяжитесь с нами: <a href="mailto:info@example.com">info@example.com</a></p>
+      </section>
 
-    <section id="contact">
-      <h2>Контакты</h2>
-      <p>Свяжитесь с нами: <a href="mailto:info@example.com">info@example.com</a></p>
-    </section>
-
-    <footer>
-      <p>&copy; 2025 Крипто-Лендинг. Все права защищены.</p>
-    </footer>
+      <footer>
+        <p>&copy; 2025 Крипто-Лендинг. Все права защищены.</p>
+      </footer>
+    </main>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    const ctx = document.getElementById('priceChart').getContext('2d');
-    const gradientBTC = ctx.createLinearGradient(0, 0, 0, 600);
-    gradientBTC.addColorStop(0, 'rgba(243,156,18,0.5)');
-    gradientBTC.addColorStop(1, 'rgba(243,156,18,0)');
-    const gradientETH = ctx.createLinearGradient(0, 0, 0, 600);
-    gradientETH.addColorStop(0, 'rgba(52,152,219,0.5)');
-    gradientETH.addColorStop(1, 'rgba(52,152,219,0)');
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн'],
-        datasets: [
-          {
-            label: 'BTC',
-            data: [30000, 32000, 28000, 40000, 35000, 45000],
-            fill: 'start',
-            backgroundColor: gradientBTC,
-            borderColor: '#f39c12',
-            pointBackgroundColor: '#f39c12',
-            pointRadius: 6,
-            pointHoverRadius: 8,
-            tension: 0.4
-          },
-          {
-            label: 'ETH',
-            data: [1000, 1200, 900, 2000, 1800, 3000],
-            fill: 'start',
-            backgroundColor: gradientETH,
-            borderColor: '#3498db',
-            pointBackgroundColor: '#3498db',
-            pointRadius: 6,
-            pointHoverRadius: 8,
-            tension: 0.4
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { labels: { color: '#fff', font: { size: 16 } } }
-        },
-        scales: {
-          x: { grid: { color: 'rgba(255,255,255,0.2)' }, ticks: { color: '#fff', font: { size: 14 } } },
-          y: { grid: { color: 'rgba(255,255,255,0.2)' }, ticks: { color: '#fff', font: { size: 14 } } }
-        }
+    const coins = [
+      { id: 'bitcoin', label: 'BTC', canvasId: 'btcChart', color: '#f39c12' },
+      { id: 'ethereum', label: 'ETH', canvasId: 'ethChart', color: '#3498db' }
+    ];
+
+    // Функция получения данных
+    async function fetchData(coin) {
+      const res = await fetch(`https://api.coingecko.com/api/v3/coins/${coin.id}/market_chart?vs_currency=usd&days=1&interval=hourly`);
+      const data = await res.json();
+      const labels = data.prices.map(item => new Date(item[0]).toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' }));
+      const prices = data.prices.map(item => item[1]);
+      return { labels, prices };
+    }
+
+    // Создание и обновление графика
+    async function initCharts() {
+      for (const coin of coins) {
+        const ctx = document.getElementById(coin.canvasId).getContext('2d');
+        const gradient = ctx.createLinearGradient(0,0,0,400);
+        gradient.addColorStop(0, coin.color + '80');
+        gradient.addColorStop(1, coin.color + '00');
+        const { labels, prices } = await fetchData(coin);
+        coin.chart = new Chart(ctx, {
+          type: 'line',
+          data: { labels, datasets: [{ label: coin.label, data: prices, fill: 'start', backgroundColor: gradient, borderColor: coin.color, tension: 0.4 }] },
+          options: { responsive: true, plugins: { legend: { labels: { color: '#fff' } } }, scales: { x: { ticks: { color: '#fff' }, grid: { color: 'rgba(255,255,255,0.2)' } }, y: { ticks: { color: '#fff' }, grid: { color: 'rgba(255,255,255,0.2)' } } } }
+        });
       }
+    }
+
+    // Обновление каждые 2 часа
+    async function updateCharts() {
+      for (const coin of coins) {
+        const { labels, prices } = await fetchData(coin);
+        coin.chart.data.labels = labels;
+        coin.chart.data.datasets[0].data = prices;
+        coin.chart.update();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      await initCharts();
+      setInterval(updateCharts, 2 * 60 * 60 * 1000);
     });
   </script>
 </body>
