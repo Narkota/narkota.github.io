@@ -150,7 +150,7 @@
       max-width: 800px;
       display: block;
       margin: 0 auto;
-      background: #fff;
+      background: rgba(255,255,255,0.1);
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -272,18 +272,50 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     const ctx = document.getElementById('priceChart').getContext('2d');
+    const gradientBTC = ctx.createLinearGradient(0, 0, 0, 400);
+    gradientBTC.addColorStop(0, 'rgba(243,156,18,0.5)');
+    gradientBTC.addColorStop(1, 'rgba(243,156,18,0)');
+    const gradientETH = ctx.createLinearGradient(0, 0, 0, 400);
+    gradientETH.addColorStop(0, 'rgba(52,152,219,0.5)');
+    gradientETH.addColorStop(1, 'rgba(52,152,219,0)');
     new Chart(ctx, {
       type: 'line',
       data: {
         labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн'],
         datasets: [
-          { label: 'BTC', data: [30000, 32000, 28000, 40000, 35000, 45000], fill: false, borderColor: '#f39c12', tension: 0.3 },
-          { label: 'ETH', data: [1000, 1200, 900, 2000, 1800, 3000], fill: false, borderColor: '#3498db', tension: 0.3 }
+          {
+            label: 'BTC',
+            data: [30000, 32000, 28000, 40000, 35000, 45000],
+            fill: 'start',
+            backgroundColor: gradientBTC,
+            borderColor: '#f39c12',
+            pointBackgroundColor: '#f39c12',
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            tension: 0.4
+          },
+          {
+            label: 'ETH',
+            data: [1000, 1200, 900, 2000, 1800, 3000],
+            fill: 'start',
+            backgroundColor: gradientETH,
+            borderColor: '#3498db',
+            pointBackgroundColor: '#3498db',
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            tension: 0.4
+          }
         ]
       },
       options: {
         responsive: true,
-        scales: { y: { beginAtZero: false } }
+        plugins: {
+          legend: { labels: { color: '#fff', font: { size: 14 } } }
+        },
+        scales: {
+          x: { grid: { color: 'rgba(255,255,255,0.2)' }, ticks: { color: '#fff' } },
+          y: { grid: { color: 'rgba(255,255,255,0.2)' }, ticks: { color: '#fff' } }
+        }
       }
     });
   </script>
