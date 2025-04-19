@@ -3,38 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Киберпанк Сайт</title>
+  <title>Крипто-Киберпанк</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background-color: #0d0d0d; color: #00fffc; font-family: 'Orbitron', sans-serif; padding: 20px; }
-    header, footer { text-align: center; padding: 20px; margin-bottom: 20px; background: linear-gradient(90deg, #ff0066, #00ffff); color: #fff; text-shadow: 0 0 10px #ff0066, 0 0 20px #00ffff; border-radius: 8px; }
-    nav ul { list-style: none; display: flex; justify-content: center; margin-bottom: 20px; }
-    nav ul li { margin: 0 15px; }
-    nav ul li a { text-decoration: none; color: #ff66cc; font-weight: 700; padding: 5px 10px; border: 1px solid #ff66cc; border-radius: 4px; transition: 0.3s; text-shadow: 0 0 5px #ff66cc; }
-    nav ul li a:hover { background: #ff66cc; color: #0d0d0d; box-shadow: 0 0 10px #ff66cc; }
-    .center-image img {
-      display: block;
-      margin: 0 auto 20px;
-      max-width: 80%;
-      border: 1px solid #ff66cc;
-      box-shadow: 0 0 15px #00ffff;
+    body { background-color: #0a0a0a; color: #39ff14; font-family: 'Orbitron', sans-serif; padding: 20px; }
+    header, footer { text-align: center; padding: 25px; margin-bottom: 20px;
+      background: linear-gradient(90deg, #00ffbb, #ff00ff);
+      color: #fff;
+      text-shadow: 0 0 10px #00ffbb, 0 0 20px #ff00ff;
       border-radius: 8px;
     }
-    main section { background: rgba(15,15,15,0.8); padding: 20px; border: 1px solid #00ffff; border-radius: 8px; box-shadow: 0 0 10px #00ffff; margin-bottom: 20px; }
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; color: #ff66cc; text-shadow: 0 0 5px #ff66cc; margin-bottom: 10px; }
-    a { color: #00ffff; }
+    nav ul { list-style: none; display: flex; justify-content: center; margin-bottom: 30px; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a {
+      text-decoration: none;
+      color: #39ff14;
+      font-weight: 700;
+      padding: 8px 12px;
+      border: 1px solid #39ff14;
+      border-radius: 4px;
+      transition: 0.3s;
+      text-shadow: 0 0 4px #39ff14;
+    }
+    nav ul li a:hover { background: #39ff14; color: #0a0a0a; box-shadow: 0 0 10px #39ff14; }
+    .center-image img {
+      display: block;
+      margin: 0 auto 30px;
+      max-width: 80%;
+      border: 2px solid #ff00ff;
+      box-shadow: 0 0 15px #ff00ff;
+      border-radius: 8px;
+    }
+    main section {
+      background: rgba(10,10,10,0.85);
+      padding: 25px;
+      border: 1px solid #00ffbb;
+      border-radius: 8px;
+      box-shadow: 0 0 12px #00ffbb;
+      margin-bottom: 30px;
+    }
+    h1 { font-size: 3rem; }
+    h2 {
+      font-size: 2.2rem;
+      color: #ff00ff;
+      text-shadow: 0 0 5px #ff00ff;
+      margin-bottom: 15px;
+    }
+    p { line-height: 1.5; margin-bottom: 15px; }
+    .coins {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .coin-card {
+      background: #111;
+      padding: 15px;
+      border: 1px solid #39ff14;
+      border-radius: 6px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 0 8px #39ff14;
+      transition: transform 0.3s;
+    }
+    .coin-card:hover { transform: scale(1.05); }
+    .coin-card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+    a { color: #00ffbb; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Добро пожаловать в киберпанк мир!</h1>
+    <h1>Крипто-Киберпанк</h1>
   </header>
   <nav>
     <ul>
-      <li><a href="#">Главная</a></li>
-      <li><a href="#about">О нас</a></li>
+      <li><a href="#crypto">Криптовалюта</a></li>
+      <li><a href="#popular">Популярные монеты</a></li>
       <li><a href="#contact">Контакты</a></li>
     </ul>
   </nav>
@@ -44,17 +93,51 @@
       <img src="https://ichef.bbci.co.uk/ace/ws/640/amz/worldservice/live/assets/images/2012/06/16/120616132954_sergei_mavrodi_304x171_rianovosti.jpg.webp" alt="Киберпанк иллюстрация">
     </div>
 
-    <section id="about">
-      <h2>О проекте</h2>
-      <p>Это базовый шаблон в стиле киберпанк с неоновыми акцентами и тёмным фоном.</p>
+    <section id="crypto">
+      <h2>Что такое криптовалюта?</h2>
+      <p>Криптовалюта — это цифровая или виртуальная валюта, использующая криптографию для обеспечения безопасности транзакций. Она работает на основе технологии блокчейн — распределённого реестра, где каждая транзакция записывается в «блок», а цепочка таких блоков хранится у большого числа участников сети.</p>
+      <p>Основные особенности:
+        <ul>
+          <li>Децентрализация — нет единого центра управления.</li>
+          <li>Анонимность и прозрачность транзакций.</li>
+          <li>Невозможность двойной траты.</li>
+        </ul>
+      </p>
     </section>
+
+    <section id="popular">
+      <h2>Популярные монеты</h2>
+      <div class="coins">
+        <div class="coin-card">
+          <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="Bitcoin">
+          <h3>Bitcoin (BTC)</h3>
+          <p>Первая и самая известная криптовалюта.</p>
+        </div>
+        <div class="coin-card">
+          <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" alt="Ethereum">
+          <h3>Ethereum (ETH)</h3>
+          <p>Платформа для смарт-контрактов и децентрализованных приложений.</p>
+        </div>
+        <div class="coin-card">
+          <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/825.png" alt="Tether">
+          <h3>Tether (USDT)</h3>
+          <p>Стейблкоин, привязанный к доллару США.</p>
+        </div>
+        <div class="coin-card">
+          <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/52.png" alt="XRP">
+          <h3>XRP</h3>
+          <p>Монета для быстрых и дешёвых международных переводов.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <h2>Связаться с нами</h2>
       <p>Напишите нам по адресу <a href="mailto:info@example.com">info@example.com</a>.</p>
     </section>
   </main>
   <footer>
-    <p>&copy; 2025 Киберпанк Сайт</p>
+    <p>&copy; 2025 Крипто-Киберпанк</p>
   </footer>
 </body>
 </html>
