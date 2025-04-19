@@ -42,10 +42,7 @@
       transition: color 0.3s;
     }
     .header-nav a:hover { color: #4a90e2; }
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-    }
+    .hero { text-align: center; padding: 100px 20px; }
     .hero h1 {
       font-size: 3.5rem;
       margin-bottom: 20px;
@@ -88,7 +85,7 @@
     }
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
       max-width: 1000px;
       margin: 0 auto;
@@ -106,7 +103,7 @@
     .feature-card h3 { margin-bottom: 10px; }
     #popular .coins {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
       max-width: 1000px;
       margin: 0 auto;
@@ -224,6 +221,8 @@
         <div class="coins">
           <div class="coin-card"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="Bitcoin"><h3>Bitcoin (BTC)</h3><p>Первая криптовалюта.</p></div>
           <div class="coin-card"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" alt="Ethereum"><h3>Ethereum (ETH)</h3><p>Платформа для смарт-контрактов.</p></div>
+          <div class="coin-card"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/825.png" alt="Tether"><h3>Tether (USDT)</h3><p>Стейблкоин, привязанный к доллару США, минимальная волатильность.</p></div>
+          <div class="coin-card"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/52.png" alt="XRP"><h3>XRP (Ripple)</h3><p>Оптимизирован для быстрых международных переводов и low-fee транзакций.</p></div>
         </div>
       </section>
       <section id="details">
@@ -233,9 +232,9 @@
             <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="BTC">
             <h3>Bitcoin (BTC)</h3>
             <p>Рыночная капитализация: ~$900 млрд. Доминирующая позиция, высокая волатильность.</p>
-            <p>Анализ: Стабильный рост после коррекции, инвесторы рассматривают BTC как защитное актив.</p>
+            <p>Анализ: Стабильный рост после коррекции, инвесторы рассматривают BTC как защитный актив.</p>
           </div>
-          <div class="detail-chart"><canvas id="btcChart"></canvas></div>
+          <div class="detail-chart"><canvas id="btcChart" width="300" height="180"></canvas></div>
         </div>
         <div class="detail-item">
           <div class="detail-info">
@@ -244,7 +243,7 @@
             <p>Рыночная капитализация: ~$400 млрд. Лидер смарт-контрактов, активная экосистема.</p>
             <p>Анализ: Переход на PoS снизил инфляцию, ожидается дальнейший рост децентрализованных приложений.</p>
           </div>
-          <div class="detail-chart"><canvas id="ethChart"></canvas></div>
+          <div class="detail-chart"><canvas id="ethChart" width="300" height="180"></canvas></div>
         </div>
       </section>
       <section id="contact">
@@ -254,45 +253,55 @@
       <footer><p>&copy; 2025 Крипто-Лендинг. Все права защищены.</p></footer>
     </main>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
   <script>
-    const coins = [
-      { id: 'bitcoin', label: 'BTC', canvasId: 'btcChart', color: '#f39c12' },
-      { id: 'ethereum', label: 'ETH', canvasId: 'ethChart', color: '#3498db' }
-    ];
-    async function fetchData(coin) {
-      const res = await fetch(`https://api.coingecko.com/api/v3/coins/${coin.id}/market_chart?vs_currency=usd&days=1&interval=hourly`);
-      const data = await res.json();
-      const labels = data.prices.map(item => new Date(item[0]).toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'}));
-      const prices = data.prices.map(item => item[1]);
-      return { labels, prices };
-    }
-    async function initCharts() {
-      for(const coin of coins) {
+    // Статические данные за апрель 2025
+    const staticData = {
+      BTC: {
+        labels: ['01 Apr','05 Apr','10 Apr','15 Apr','20 Apr','25 Apr','30 Apr'],
+        prices: [58000,60000,59000,62000,61000,63000,64000]
+      },
+      ETH: {
+        labels: ['01 Apr','05 Apr','10 Apr','15 Apr','20 Apr','25 Apr','30 Apr'],
+        prices: [3200,3400,3300,3500,3450,3600,3700]
+      }
+    };
+    window.onload = function() {
+      const coins = [
+        { key: 'BTC', canvasId: 'btcChart', color: '#f39c12' },
+        { key: 'ETH', canvasId: 'ethChart', color: '#3498db' }
+      ];
+      coins.forEach(coin => {
         const ctx = document.getElementById(coin.canvasId).getContext('2d');
         const gradient = ctx.createLinearGradient(0,0,0,180);
         gradient.addColorStop(0, coin.color + '80');
         gradient.addColorStop(1, coin.color + '00');
-        const {labels, prices} = await fetchData(coin);
-        coin.chart = new Chart(ctx,{
-          type:'line',
-          data:{ labels, datasets:[{ label:coin.label, data:prices, fill:'start', backgroundColor:gradient, borderColor:coin.color, tension:0.4 }] },
-          options:{ responsive:true, plugins:{ legend:{ labels:{ color:'#fff', font:{ size:12 } } } }, scales:{ x:{ ticks:{ color:'#fff', font:{ size:10 } }, grid:{ color:'rgba(255,255,255,0.2)' } }, y:{ ticks:{ color:'#fff', font:{ size:10 } }, grid:{ color:'rgba(255,255,255,0.2)' } } }
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: staticData[coin.key].labels,
+            datasets: [{
+              label: coin.key,
+              data: staticData[coin.key].prices,
+              fill: 'start',
+              backgroundColor: gradient,
+              borderColor: coin.color,
+              pointBackgroundColor: coin.color,
+              pointRadius: 5,
+              tension: 0.4
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: { legend: { labels: { color: '#fff', font: { size: 12 } } } },
+            scales: {
+              x: { ticks: { color: '#fff', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.2)' } },
+              y: { ticks: { color: '#fff', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.2)' } }
+            }
+          }
         });
-      }
-    }
-    async function updateCharts() {
-      for(const coin of coins) {
-        const {labels, prices} = await fetchData(coin);
-        coin.chart.data.labels = labels;
-        coin.chart.data.datasets[0].data = prices;
-        coin.chart.update();
-      }
-    }
-    document.addEventListener('DOMContentLoaded', async()=>{
-      await initCharts();
-      setInterval(updateCharts, 2*60*60*1000);
-    });
+      });
+    };
   </script>
 </body>
 </html>
