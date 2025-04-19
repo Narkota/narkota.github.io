@@ -3,106 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Крипто-Киберпанк</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <title>Криптовалюта</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background-color: #0a0a0a; color: #39ff14; font-family: 'Orbitron', sans-serif; padding: 20px; }
-    header, footer { text-align: center; padding: 25px; margin-bottom: 20px;
-      background: linear-gradient(90deg, #00ffbb, #ff00ff);
-      color: #fff;
-      text-shadow: 0 0 10px #00ffbb, 0 0 20px #ff00ff;
-      border-radius: 8px;
-    }
-    nav ul { list-style: none; display: flex; justify-content: center; margin-bottom: 30px; }
-    nav ul li { margin: 0 15px; }
-    nav ul li a {
-      text-decoration: none;
-      color: #39ff14;
-      font-weight: 700;
-      padding: 8px 12px;
-      border: 1px solid #39ff14;
-      border-radius: 4px;
-      transition: 0.3s;
-      text-shadow: 0 0 4px #39ff14;
-    }
-    nav ul li a:hover { background: #39ff14; color: #0a0a0a; box-shadow: 0 0 10px #39ff14; }
-    .center-image img {
-      display: block;
-      margin: 0 auto 30px;
-      max-width: 80%;
-      border: 2px solid #ff00ff;
-      box-shadow: 0 0 15px #ff00ff;
-      border-radius: 8px;
-    }
-    main section {
-      background: rgba(10,10,10,0.85);
-      padding: 25px;
-      border: 1px solid #00ffbb;
-      border-radius: 8px;
-      box-shadow: 0 0 12px #00ffbb;
-      margin-bottom: 30px;
-    }
-    h1 { font-size: 3rem; }
-    h2 {
-      font-size: 2.2rem;
-      color: #ff00ff;
-      text-shadow: 0 0 5px #ff00ff;
-      margin-bottom: 15px;
-    }
-    p { line-height: 1.5; margin-bottom: 15px; }
-    .coins {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .coin-card {
-      background: #111;
-      padding: 15px;
-      border: 1px solid #39ff14;
-      border-radius: 6px;
-      width: 200px;
-      text-align: center;
-      box-shadow: 0 0 8px #39ff14;
-      transition: transform 0.3s;
-    }
-    .coin-card:hover { transform: scale(1.05); }
-    .coin-card img {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 10px;
-    }
-    a { color: #00ffbb; }
+    body { background-color: #f9f9f9; color: #333333; font-family: 'Roboto', sans-serif; padding: 20px; }
+    header, footer { text-align: center; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    header h1 { font-size: 2.5rem; color: #4a90e2; }
+    footer p { font-size: 0.9rem; color: #777777; }
+    nav ul { list-style: none; display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+    nav ul li a { text-decoration: none; color: #4a90e2; font-weight: 500; padding: 8px 12px; border: 1px solid transparent; border-radius: 4px; transition: background-color 0.3s, color 0.3s; }
+    nav ul li a:hover { background-color: #4a90e2; color: #ffffff; }
+    .center-image img { display: block; margin: 0 auto 30px; max-width: 80%; border-radius: 8px; }
+    main section { background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 30px; }
+    h2 { font-size: 1.8rem; color: #333333; margin-bottom: 15px; }
+    p { line-height: 1.6; margin-bottom: 15px; }
+    .coins { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
+    .coin-card { background: #ffffff; padding: 15px; border: 1px solid #e0e0e0; border-radius: 6px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
+    .coin-card:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .coin-card img { width: 60px; height: 60px; margin-bottom: 10px; }
+    a { color: #4a90e2; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { list-style: disc inside; margin-bottom: 15px; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Крипто-Киберпанк</h1>
+    <h1>Криптовалюта</h1>
   </header>
   <nav>
     <ul>
-      <li><a href="#crypto">Криптовалюта</a></li>
+      <li><a href="#crypto">Что такое</a></li>
       <li><a href="#popular">Популярные монеты</a></li>
       <li><a href="#contact">Контакты</a></li>
     </ul>
   </nav>
   <main>
-    <!-- Центральное изображение -->
     <div class="center-image">
-      <img src="https://ichef.bbci.co.uk/ace/ws/640/amz/worldservice/live/assets/images/2012/06/16/120616132954_sergei_mavrodi_304x171_rianovosti.jpg.webp" alt="Киберпанк иллюстрация">
+      <img src="13c41bab-4793-4efa-b211-b687e7b773fb.png" alt="Иллюстрация криптовалюты">
     </div>
 
     <section id="crypto">
       <h2>Что такое криптовалюта?</h2>
-      <p>Криптовалюта — это цифровая или виртуальная валюта, использующая криптографию для обеспечения безопасности транзакций. Она работает на основе технологии блокчейн — распределённого реестра, где каждая транзакция записывается в «блок», а цепочка таких блоков хранится у большого числа участников сети.</p>
-      <p>Основные особенности:
-        <ul>
-          <li>Децентрализация — нет единого центра управления.</li>
-          <li>Анонимность и прозрачность транзакций.</li>
-          <li>Невозможность двойной траты.</li>
-        </ul>
-      </p>
+      <p>Криптовалюта — это цифровая или виртуальная валюта, использующая криптографию для безопасности и управления транзакциями. Она функционирует на основе технологии блокчейн — распределённого реестра, где каждая транзакция закрепляется в «блоках», образующих единую прозрачную цепочку.</p>
+      <ul>
+        <li>Децентрализация без единого центра управления.</li>
+        <li>Прозрачность записей и защита от подделок.</li>
+        <li>Низкие комиссии и быстрые международные переводы.</li>
+      </ul>
     </section>
 
     <section id="popular">
@@ -132,12 +80,12 @@
     </section>
 
     <section id="contact">
-      <h2>Связаться с нами</h2>
-      <p>Напишите нам по адресу <a href="mailto:info@example.com">info@example.com</a>.</p>
+      <h2>Контакты</h2>
+      <p>Напишите нам: <a href="mailto:info@example.com">info@example.com</a></p>
     </section>
   </main>
   <footer>
-    <p>&copy; 2025 Крипто-Киберпанк</p>
+    <p>&copy; 2025 Криптовалюта. Все права защищены.</p>
   </footer>
 </body>
 </html>
