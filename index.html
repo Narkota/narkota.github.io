@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Крипто-Лендинг</title>
+  <title>Крипто-Лендинг</n>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -29,38 +29,18 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       z-index: 1000;
     }
-    .header-nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px 0;
-    }
-    .header-nav a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    .header-nav a:hover {
-      color: #4a90e2;
-    }
+    .header-nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; padding: 15px 0; }
+    .header-nav a { color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    .header-nav a:hover { color: #4a90e2; }
+
     /* Hero */
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-    }
+    .hero { text-align: center; padding: 100px 20px; }
     .hero h1 {
       font-size: 3.5rem;
       margin-bottom: 20px;
       text-shadow: 0 2px 5px rgba(0,0,0,0.7);
     }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: #ddd;
-    }
+    .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; color: #ddd; }
     .cta-button {
       background: #4a90e2;
       color: #fff;
@@ -68,35 +48,18 @@
       border: none;
       border-radius: 5px;
       font-size: 1rem;
-      text-decoration: none;
       transition: background 0.3s;
     }
-    .cta-button:hover {
-      background: #357ABD;
-    }
-    main {
-      padding: 0 20px;
-    }
-    section {
-      padding: 60px 0;
-    }
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: #4a90e2;
-    }
+    .cta-button:hover { background: #357ABD; }
+
+    main { padding: 0 20px; }
+    section { padding: 60px 0; }
+    section h2 { text-align: center; font-size: 2rem; margin-bottom: 30px; color: #4a90e2; }
+
     /* О криптовалюте */
-    #crypto .content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    #crypto ul {
-      list-style: disc inside;
-      margin-top: 20px;
-      color: #ddd;
-    }
+    #crypto .content { max-width: 800px; margin: 0 auto; text-align: center; }
+    #crypto ul { list-style: disc inside; margin-top: 20px; color: #ddd; }
+
     /* Возможности */
     .features-grid {
       display: grid;
@@ -105,21 +68,10 @@
       max-width: 1000px;
       margin: 0 auto;
     }
-    .feature-card {
-      background: #fff;
-      color: #333;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .feature-card:hover {
-      transform: translateY(-5px);
-    }
-    .feature-card h3 {
-      margin-bottom: 10px;
-    }
+    .feature-card { background: #fff; color: #333; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s; }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-card h3 { margin-bottom: 10px; }
+
     /* Популярные монеты */
     #popular .coins {
       display: grid;
@@ -128,49 +80,26 @@
       max-width: 1000px;
       margin: 0 auto;
     }
-    .coin-card {
-      background: #fff;
-      color: #333;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .coin-card:hover {
-      transform: translateY(-5px);
-    }
-    .coin-card img {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 10px;
-    }
+    .coin-card { background: #fff; color: #333; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s; }
+    .coin-card:hover { transform: translateY(-5px); }
+    .coin-card img { width: 60px; height: 60px; margin-bottom: 10px; }
+
     /* Графики */
     #charts canvas {
       max-width: 800px;
       display: block;
       margin: 0 auto;
-      background: #fff;
+      background: rgba(255,255,255,0.1);
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
+
     /* Контакты */
-    #contact p {
-      text-align: center;
-      color: #ddd;
-    }
-    a {
-      color: #4a90e2;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #ddd;
-    }
+    #contact p { text-align: center; color: #ddd; }
+    a { color: #4a90e2; }
+    a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 20px; color: #ddd; }
   </style>
 </head>
 <body>
@@ -195,8 +124,7 @@
     </section>
 
     <section id="crypto">
-      <h2>Что такое криптовалюта?</h2>
-      <div class="content">
+      <h2>Что такое криптовалюта?</n>      <div class="content">
         <p>Криптовалюта — цифровая валюта на основе блокчейна, обеспечивающая безопасность, прозрачность и децентрализацию транзакций.</p>
         <ul>
           <li>Децентрализованное управление.</li>
@@ -207,8 +135,7 @@
     </section>
 
     <section id="features">
-      <h2>Возможности</h2>
-      <div class="features-grid">
+      <h2>Возможности</n>      <div class="features-grid">
         <div class="feature-card">
           <h3>DeFi</h3>
           <p>Децентрализованные финансы без посредников.</p>
@@ -229,8 +156,7 @@
     </section>
 
     <section id="popular">
-      <h2>Популярные монеты</h2>
-      <div class="coins">
+      <h2>Популярные монеты</n>      <div class="coins">
         <div class="coin-card">
           <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="Bitcoin">
           <h3>Bitcoin (BTC)</h3>
@@ -255,13 +181,11 @@
     </section>
 
     <section id="charts">
-      <h2>Динамика цен</h2>
-      <canvas id="priceChart"></canvas>
+      <h2>Динамика цен</n>      <canvas id="priceChart"></canvas>
     </section>
 
     <section id="contact">
-      <h2>Контакты</h2>
-      <p>Свяжитесь с нами: <a href="mailto:info@example.com">info@example.com</a></p>
+      <h2>Контакты</n>      <p>Свяжитесь с нами: <a href="mailto:info@example.com">info@example.com</a></p>
     </section>
 
     <footer>
@@ -272,18 +196,50 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     const ctx = document.getElementById('priceChart').getContext('2d');
+    const gradientBTC = ctx.createLinearGradient(0, 0, 0, 400);
+    gradientBTC.addColorStop(0, 'rgba(243,156,18,0.5)');
+    gradientBTC.addColorStop(1, 'rgba(243,156,18,0)');
+    const gradientETH = ctx.createLinearGradient(0, 0, 0, 400);
+    gradientETH.addColorStop(0, 'rgba(52,152,219,0.5)');
+    gradientETH.addColorStop(1, 'rgba(52,152,219,0)');
     new Chart(ctx, {
       type: 'line',
       data: {
         labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн'],
         datasets: [
-          { label: 'BTC', data: [30000, 32000, 28000, 40000, 35000, 45000], fill: false, borderColor: '#f39c12', tension: 0.3 },
-          { label: 'ETH', data: [1000, 1200, 900, 2000, 1800, 3000], fill: false, borderColor: '#3498db', tension: 0.3 }
+          {
+            label: 'BTC',
+            data: [30000, 32000, 28000, 40000, 35000, 45000],
+            fill: 'start',
+            backgroundColor: gradientBTC,
+            borderColor: '#f39c12',
+            pointBackgroundColor: '#f39c12',
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            tension: 0.4
+          },
+          {
+            label: 'ETH',
+            data: [1000, 1200, 900, 2000, 1800, 3000],
+            fill: 'start',
+            backgroundColor: gradientETH,
+            borderColor: '#3498db',
+            pointBackgroundColor: '#3498db',
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            tension: 0.4
+          }
         ]
       },
       options: {
         responsive: true,
-        scales: { y: { beginAtZero: false } }
+        plugins: {
+          legend: { labels: { color: '#fff', font: { size: 14 } } }
+        },
+        scales: {
+          x: { grid: { color: 'rgba(255,255,255,0.2)' }, ticks: { color: '#fff' } },
+          y: { grid: { color: 'rgba(255,255,255,0.2)' }, ticks: { color: '#fff' } }
+        }
       }
     });
   </script>
